@@ -3,6 +3,7 @@ import Search from './components/Search';
 import ViewBuilding from './components/ViewBuilding';
 import BuildingList from './components/BuildingList';
 import Credit from './components/Credit';
+import AddBuilding from './components/AddBuilding';
 
 
 class App extends React.Component {
@@ -29,11 +30,13 @@ class App extends React.Component {
     });
   }
 
-  dataUpdate(updatedData) {
+  AddBuilding(building) {
+    const added = this.state.data.concat(building);
     this.setState({
-      data: updatedData
+      data: added
     })
   }
+
 
   render() {
 

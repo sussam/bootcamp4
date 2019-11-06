@@ -23,12 +23,14 @@ class ViewBuilding extends React.Component {
 					<p><text>Code:</text> {selectedBuilding[0].code}</p>
 					<p><text>Name:</text> {selectedBuilding[0].name}</p>
 
-					{selectedBuilding[0].coordinates.latitude &&
-						<p><text>Latitude:</text> {selectedBuilding[0].coordinates.latitude} </p>
+					{selectedBuilding[0].coordinates &&
+						<p><text>Longitude: </text>{selectedBuilding[0].coordinates.longitude}</p>
 					}
-					{selectedBuilding[0].coordinates.longitude &&
-						<p><text>Longitude:</text> {selectedBuilding[0].coordinates.longitude} </p>
+
+					{selectedBuilding[0].coordinates &&
+						<p><text>Latitude: </text>{selectedBuilding[0].coordinates.latitude}</p>
 					}
+
 					{selectedBuilding[0].address &&
 						<p><text>Address:</text> {selectedBuilding[0].address}</p>
 					}
