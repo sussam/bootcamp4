@@ -52,6 +52,7 @@ td:hover {
 	float: left;
 	width: 50%;
 	padding: 10px;
+	background-color: rgb(238, 223, 223);
 }
 .column2 {
 	float: left;

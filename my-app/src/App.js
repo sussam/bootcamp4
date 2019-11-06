@@ -10,8 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       filterText: '',
-      selectedBuilding: 0
-
+      selectedBuilding: 0,
+      data: props.data
     };
   }
 
@@ -29,21 +29,9 @@ class App extends React.Component {
     });
   }
 
-  AddBuilding(code, name, longitude, latitude, address) {
-    var list = this.state.data[this.state.data.length - 1].id;
-    var input = this.state.data;
-    input.push({
-      id: list + 1,
-      code: code,
-      name: name,
-      coordinates: {
-        longitude: longitude,
-        latitude: latitude
-      },
-      address: address
-    })
+  dataUpdate(updatedData) {
     this.setState({
-      data: input
+      data: updatedData
     })
   }
 
@@ -67,7 +55,7 @@ class App extends React.Component {
                     </td>
                   </tr>
                   <BuildingList
-                    data={this.props.data}
+                    data={this.state.data}
                     selectedUpdate={this.selectedUpdate.bind(this)}
                     filterText={this.state.filterText}
                   />
